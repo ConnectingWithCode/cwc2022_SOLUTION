@@ -1,5 +1,6 @@
 import rosegraphics as rg
 
+
 def main():
     window = rg.RoseWindow(400, 600, title="Click to draw lines")
     pt1 = window.get_next_mouse_click()
@@ -9,5 +10,6 @@ def main():
         line.attach_to(window)
         window.render(0.1)
         pt1 = pt2
+
 
 main()
