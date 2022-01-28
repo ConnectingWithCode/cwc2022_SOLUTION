@@ -4,7 +4,7 @@ import rosegame as rg
 
 def setup(game):
     print("Setup stuff")
-    game.my_fighter = rg.Sprite(game, "fighter.png", 40, 300)
+    game.my_fighter = rg.Sprite(game, "images/fighter.png", 40, 300)
 
 
 def loop(game):

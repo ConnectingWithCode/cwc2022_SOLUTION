@@ -74,6 +74,9 @@ class Point:
     def point_from_tuple(self, point_tuple):
         return Point(point_tuple[0], point_tuple[1])
 
+    def clone(self):
+        return Point(self.x, self.y)
+
     @property
     def as_tuple(self):
         return (self.x, self.y)
@@ -134,8 +137,8 @@ class Line(GraphicsObject):
 
     def __init__(self, game, pt1, pt2, color=(128, 0, 0), thickness=4):
         self.game = game
-        self.pt1 = pt1
-        self.pt2 = pt2
+        self.pt1 = pt1.clone()
+        self.pt2 = pt2.clone()
         self.color = color
         self.thickness = thickness
 
