@@ -1,15 +1,23 @@
+import pygame
 import rosegame as rg
 
 
 def setup(game):
-    print("TODO: Setup stuff")
+    print("Setup stuff")
     game.my_fighter = rg.Sprite(game, "fighter.png", 40, 300)
 
 
 def loop(game):
-    print("Loop")
+    if game.is_key_pressed(pygame.K_UP):
+        game.my_fighter.move(0, -5)
+    if game.is_key_pressed(pygame.K_DOWN):
+        game.my_fighter.move(0, 5)
+    if game.is_key_pressed(pygame.K_LEFT):
+        game.my_fighter.move(-5, 0)
+    if game.is_key_pressed(pygame.K_RIGHT):
+        game.my_fighter.move(5, 0)
+
     game.my_fighter.draw()
-    game.my_fighter.move(0, -1)
 
 
 rg.init(setup, loop)
