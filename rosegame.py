@@ -20,12 +20,18 @@ class Rosegame:
         self.events = []
 
     def is_key_pressed(self, key):
+        """
+
+        :param key: The key to check
+        :type key: int
+        :return: Returns true if the key is being held down (being pressed)
+        :rtype: bool
+        """
         all_keys = pygame.key.get_pressed()
         return all_keys[key]
 
     def is_key_newly_pressed(self, key):
         for event in self.events:
-            print(event)
             if event.type == pygame.KEYDOWN:
                 if event.key == key:
                     return True
@@ -80,7 +86,6 @@ class GraphicsObject:
         self.width = 0
         self.height = 0
 
-
     def move(self, x, y):
         self.center.move(x, y)
 
@@ -93,6 +98,11 @@ class GraphicsObject:
         self_rect = pygame.Rect(self.x, self.y, self.image.get_width(), self.image.get_height())
         other_rect = pygame.Rect(another_object.x, another_object.y, another_object.image.get_width(), another_object.image.get_height())
         return self_rect.colliderect(other_rect)
+
+    @property
+    def is_off_screen(self):
+        # TODO: Implement
+        pass
 
     def draw(self):
         print("Draw should be overridden by every subclass of GraphicsObject")
@@ -117,7 +127,7 @@ class Sprite(GraphicsObject):
 
     def draw(self):
         self.game.screen.blit(self.image, (self.center.x - self.width / 2,
-                                           self.center.y + self.width / 2))
+                                           self.center.y - self.height / 2))
 
 
 class Line(GraphicsObject):

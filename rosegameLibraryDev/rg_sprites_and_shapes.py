@@ -18,16 +18,17 @@ def loop(game):
         game.my_fighter.move(5, 0)
 
     if game.is_key_newly_pressed(pygame.K_SPACE):
-        print("Pressed space")
         fighter_center_x = game.my_fighter.center.x
         fighter_top_y = game.my_fighter.center.y - game.my_fighter.height / 2
         laser_bottom_pt = rg.Point(fighter_center_x, fighter_top_y)
         laser_top_pt = rg.Point(fighter_center_x, fighter_top_y - 10)
-        game.missiles.append(rg.Line(laser_top_pt, laser_bottom_pt))
+        game.missiles.append(rg.Line(game, laser_top_pt, laser_bottom_pt))
 
     # Draw your Sprites
     game.my_fighter.draw()
     for missile in game.missiles:
+        missile.move(0, -2)
         missile.draw()
+
 
 rg.init(setup, loop)
