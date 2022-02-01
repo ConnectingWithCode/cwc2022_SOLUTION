@@ -41,6 +41,8 @@ def loop(game):
         game.enemy_fleet.check_missle(missile)
         missile.move(0, -2)
         missile.draw()
+
+    game.enemy_fleet.check_for_game_over(game.my_fighter)
     game.enemy_fleet.move()
     game.enemy_fleet.draw()
 
