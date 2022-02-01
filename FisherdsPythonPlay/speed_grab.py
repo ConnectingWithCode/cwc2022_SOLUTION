@@ -65,9 +65,7 @@ async def move_the_fish():
     fish.image = random.choice(fish_images)
     while True:
         fish.go_to(play.random_position())
-        print("move")
         if fish.distance_to(polar_bear) > 200 and fish.distance_to(penguin) > 200:
-            print("good")
             break
     bear_scoreboard.words = f"Penguin: {penguin.score}"
     penguin_scoreboard.words = f"Polar Bear: {polar_bear.score}"
@@ -116,6 +114,11 @@ def move_on_key_pressed_udlr(sprite, speed):
 def move_on_key_pressed_wasd(sprite, speed):
     move_on_key_pressed(sprite, speed, 'w', 's', 'a', 'd')
 
+#Optional fish move on start...
+
+# @play.when_program_starts
+# async def do():
+#   await move_the_fish()
 
 @play.repeat_forever
 async def do():
