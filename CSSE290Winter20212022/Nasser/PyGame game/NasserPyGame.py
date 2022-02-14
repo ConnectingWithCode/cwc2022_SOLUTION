@@ -18,6 +18,7 @@ message = play.new_text(
         color='black',
         transparency=100
     )
+
 cowboy1_scoreboard = play.new_text(
         words='cowboy1: 0',
         x=play.screen.left + 90,
