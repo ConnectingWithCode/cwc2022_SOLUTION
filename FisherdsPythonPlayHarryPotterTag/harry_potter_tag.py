@@ -101,6 +101,12 @@ async def do():
         fawkes_list.append(new_fawkes)
         await play.timer(seconds=fawkes_release_time)
 
+text = play.new_text('')
+
+@play.when_any_key_pressed
+def do(key):
+    text.words = f'{key} pressed!'
+
 @play.repeat_forever
 async def do():
         if play.key_is_pressed('up'):
