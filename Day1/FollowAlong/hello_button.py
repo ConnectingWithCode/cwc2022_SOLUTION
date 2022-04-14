@@ -5,12 +5,10 @@ inc_button = play.new_image(
         x=200
 )
 
-
 dec_button = play.new_image(
         "minus.png",
         x=-200
 )
-
 
 reset_button = play.new_image(
         "reset.png",
@@ -26,21 +24,24 @@ message = play.new_text(
 message.counter = 0
 
 @inc_button.when_clicked
-def bob1():
+def do():
     print("You clicked inc")
     message.counter = message.counter + 1
-    message.words = "count = " + str(message.counter)
+    update_message()
 
 @dec_button.when_clicked
-def do3():
+def do():
     print("You clicked dec")
     message.counter = message.counter - 1
-    message.words = f"count = {message.counter:.2f}"
+    update_message()
 
 @reset_button.when_clicked
 def do():
     print("You clicked reset")
     message.counter = 0
-    message.words = "count = " + str(message.counter)
+    update_message()
+
+def update_message():
+    message.words = f"Count = {message.counter}"
 
 play.start_program()
