@@ -73,6 +73,6 @@ message = play.new_text(
 message.money_cents = 0
 
 def update_display():
-    message.words = f"{message.money_cents / 100}"
+    message.words = f"${message.money_cents / 100:.2f}"
 
 play.start_program()
