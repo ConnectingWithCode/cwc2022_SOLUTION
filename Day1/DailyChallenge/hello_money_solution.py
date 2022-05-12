@@ -18,7 +18,7 @@ dime_button = play.new_image(
         "images/dime.png",
         x=75,
         y=50,
-        size=14
+        size=11
 )
 
 quarter_button = play.new_image(
