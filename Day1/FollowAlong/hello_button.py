@@ -1,17 +1,17 @@
 import play
 
 inc_button = play.new_image(
-        "plus.png",
+        "images/plus.png",
         x=200
 )
 
 dec_button = play.new_image(
-        "minus.png",
+        "images/minus.png",
         x=-200
 )
 
 reset_button = play.new_image(
-        "reset.png",
+        "images/reset.png",
         size=18
 )
 
