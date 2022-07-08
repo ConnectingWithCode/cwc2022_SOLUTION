@@ -61,7 +61,7 @@ fish = play.new_image(
 
 
 async def move_the_fish():
-    fish_images = ['fish1.png', 'fish2.png']
+    fish_images = ['fish1.png', 'fish.png']
     fish.image = random.choice(fish_images)
     while True:
         fish.go_to(play.random_position())
